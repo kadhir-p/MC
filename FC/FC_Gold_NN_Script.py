@@ -16,6 +16,7 @@ from sklearn.utils import shuffle
 
 import math
 from tensorflow.keras.optimizers import RMSprop
+#from tensorflow.keras.optimizers import Adam
 import pandas as pd
 from pandas import DataFrame
 from multiprocessing import Process
@@ -45,6 +46,7 @@ def build_model(input, n1, n2):
     ])
 
     optimizer = RMSprop(0.001)
+    #optimizer = Adam(0.001)
     model.compile(loss='mse', optimizer=optimizer, metrics=['mae','mse']) #, run_eagerly=True)
     
     return model
